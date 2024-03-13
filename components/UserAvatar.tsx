@@ -7,8 +7,8 @@ const UserAvatar = ({
 	image,
 	className,
 }: {
-	name: string
-	image: string
+	name?: string | null | undefined
+	image?: string | null | undefined
 	className?: string
 }) => {
 	return (
