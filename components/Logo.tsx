@@ -1,4 +1,4 @@
-import logoImage from '@logos/logo2.svg'
+import logoImage from '@logos/logo.svg'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
