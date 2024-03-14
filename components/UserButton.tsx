@@ -13,6 +13,7 @@ import { Button } from './ui/button'
 import { signIn, signOut } from 'next-auth/react'
 
 const UserButton = ({ session }: { session: Session | null }) => {
+	// Subscribtion listener....
 	if (!session) {
 		return (
 			<Button variant={'outline'} onClick={() => signIn()}>
