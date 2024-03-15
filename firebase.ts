@@ -5,12 +5,12 @@ import { getFunctions } from 'firebase/functions'
 
 // Web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: process.env.APP_API_KEY,
-	authDomain: process.env.APP_AUTH_DOMAIN,
-	projectId: process.env.APP_PROJECT_ID,
-	storageBucket: process.env.APP_STORAGE_BUCKEKT,
-	messagingSenderId: process.env.APP_MESSAGING_SENDER_ID,
-	appId: process.env.APP_ID,
+	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+	authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKEKT,
+	messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.NEXT_PUBLIC_FIREBASE_ID,
 }
 
 // Initialize Firebase, with a ternary check to not to re-initiate the app if it is already created
