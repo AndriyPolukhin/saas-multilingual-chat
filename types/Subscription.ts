@@ -16,7 +16,7 @@ export interface Subscription {
 	payment_method?: string
 	latest_invoice?: string
 	status:
-		| 'acitve'
+		| 'active'
 		| 'canceled'
 		| 'incomplete'
 		| 'incomplete_expired'
