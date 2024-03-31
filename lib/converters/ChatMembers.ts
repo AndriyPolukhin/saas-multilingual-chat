@@ -1,5 +1,4 @@
 import { db } from '@/firebase'
-import { Firestore } from 'firebase-admin/firestore'
 import {
 	DocumentData,
 	FirestoreDataConverter,
