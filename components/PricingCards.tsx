@@ -93,10 +93,7 @@ const PricingCards = ({ redirect }: { redirect: boolean }) => {
 								Get Started Today
 							</Link>
 						) : (
-							<>
-								{' '}
-								tier.id && <CheckoutButton />
-							</>
+							<>{tier.id && <CheckoutButton />}</>
 						)}
 					</div>
 				))}
