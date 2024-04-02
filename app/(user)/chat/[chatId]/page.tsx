@@ -1,6 +1,11 @@
 import { authOptions } from '@/auth'
 import ChatInput from '@/components/ChatInput'
+import ChatMessages from '@/components/ChatMessages'
+import ChatMembersBadges from '@/components/ChatMembersBadges'
+import { sortedMessagesRef } from '@/lib/converters/Message'
+import { getDocs } from 'firebase/firestore'
 import { getServerSession } from 'next-auth'
+import AdminControls from '@/components/AdminControls'
 
 type Props = {
 	params: {
@@ -11,14 +16,23 @@ type Props = {
 const ChatPage = async ({ params: { chatId } }: Props) => {
 	const session = await getServerSession(authOptions)
 
+	const initialMessages = (await getDocs(sortedMessagesRef(chatId))).docs.map(
+		(doc) => doc.data()
+	)
+
 	return (
-		<div>
-			{/* Admin Controls */}
-			{/* Chat Members Badge */}
-			{/* Chat Messages */}
-			{/* Chat Input */}
+		<>
+			<AdminControls chatId={chatId} />
+			<ChatMembersBadges chatId={chatId} />
+			<div className='flex-1'>
+				<ChatMessages
+					chatId={chatId}
+					session={session}
+					initialMessages={initialMessages}
+				/>
+			</div>
 			<ChatInput chatId={chatId} />
-		</div>
+		</>
 	)
 }
 
